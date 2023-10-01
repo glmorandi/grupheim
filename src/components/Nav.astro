@@ -1,8 +1,6 @@
 ---
 import Icon from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
-import type { iconPaths } from './IconPaths';
-import { ViewTransitions } from 'astro:transitions';
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
@@ -14,7 +12,6 @@ const textLinks: { label: string; href: string }[] = [
 ---
 
 <nav>
-	<ViewTransitions />
 	<div class="menu-header">
 		<a href="/" class="site-title">
 			 GRUPHEIM
