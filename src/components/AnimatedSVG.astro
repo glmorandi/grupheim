@@ -12,31 +12,22 @@
   stroke-width: 1.5;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-  animation-name: drawPath, fillPath;
+  animation: drawAndFill 2s ease-in-out forwards;
 }
 
-@keyframes drawPath {
-  from {
-    stroke-dashoffset: 1000;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes fillPath {
+@keyframes drawAndFill {
   0% {
+    stroke-dashoffset: 1000;
     fill: none;
     fill-opacity: 0;
   }
   15% {
+    stroke-dashoffset: 1000;
     fill: none;
     fill-opacity: 0;
   }
   100% {
+    stroke-dashoffset: 0;
     fill: var(--gray-100);
     fill-opacity: 1;
   }
