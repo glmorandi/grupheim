@@ -1,0 +1,199 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import Card from '../components/Card.astro';
+
+import { ViewTransitions, fade } from 'astro:transitions';
+import AnimatedSVG from '../components/AnimatedSVG.astro';
+---
+
+<BaseLayout>
+	<ViewTransitions />
+	<div class="stack gap-20" transition:animate={fade({duration: "0.1s"})}>
+		<div class="wrapper svg" id="Inicio">
+			<AnimatedSVG />
+		</div>
+		<main class="wrapper about">
+			<section>
+				<h2 class="section-title" id="Sobre">Sobre</h2>
+				<div class="content">
+					<p>
+						O Grupo de Pesquisa História da Educação, Imigração e Memória (GRUPHEIM) foi criado em 2008 na Universidade de Caxias do Sul, como uma iniciativa dos professores Lúcio Kreutz, Terciane Ângela Luchese e Luciane Sgarbi Grazziotin, no âmbito do Programa de Pós-Graduação em Educação. O grupo tem como objetivo principal promover a pesquisa e a divulgação dos estudos relacionados à História da Educação, especialmente na região. Sua formação e objetivos foram discutidos durante o V Congresso Brasileiro de História da Educação, em Aracaju, e desde então, foram realizados os trâmites de registro junto ao CNPq e à instituição de ensino.
+					</p>
+					<p>
+						O GRUPHEIM é composto por pesquisadores, incluindo docentes, estudantes e ex-alunos da UCS e de outras instituições de ensino superior, que colaboram em pesquisas na área da História da Educação. O grupo atua de forma regular e sistemática, buscando contribuir para o avanço da ciência e da pesquisa na área educacional, sempre comprometido com a Educação e com o desenvolvimento da História da Educação.
+					</p>
+					<p>
+						Ao longo de sua trajetória, o GRUPHEIM consolidou uma prática que ampliou as oportunidades de pesquisa no campo da história da educação, tornando-se um referencial nessa área. Inicialmente liderado pelo professor Dr. Lúcio Kreutz, em 2016 a liderança passou para a professora Terciane Ângela Luchese, com o professor José Edimar de Souza atuando como vice-líder do grupo e a colaboração da professora Eliana Rela.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title" id="Publicacoes">Publicações</h2>
+				<div class="content">
+					<!-- GRUPHEIM -->
+					<Card
+					href="https://www.ucs.br/educs/livro/caleidoscopio-da-historia-da-educacao-percursos-teorico-metodologicos/"
+					title="Caleidoscópio da História da Educação: percursos teórico-metodológicos"
+					body="Este e-book, Caleidoscópio da História da Educação: percursos teórico-metodológicos, é uma iniciativa discente organizada por doutorandos vinculados ao Grupo de Pesquisa História da Educação, Imigração e Memória (Grupheim)"
+					/>
+					<Card
+					href="https://www.ucs.br/educs/livro/caleidoscopio-da-historia-da-educacao-escolarizacao-e-sujeitos-escolares-3901/"
+					title="Caleidoscópio da história da educação: escolarização e sujeitos escolares"
+					body="O e-book Caleidoscópio da História da Educação está na sua 3ª edição. A obra é uma iniciativa do Grupo de Pesquisa História da Educação, Imigração e Memória (GRUPHEIM), com organização de integrantes do grupo - discentes e egressos do curso de Doutorado do Programa de Pós-Graduação em Educação da Universidade de Caxias do Sul e demais convidados..."
+					/>
+					<Card
+					href="https://www.ucs.br/educs/livro/1a-jornada-nacional-de-pesquisa-historia-da-educacao-imigracao-e-memoria-3961/"
+					title="1ª Jornada Nacional de Pesquisa: História da Educação, Imigração e Memória"
+					body="Essa obra celebra os 15 anos do Grupo de Pesquisa História da Educação, Imigração e Memória (GRUPHEIM)..."
+					/>
+					<!-- Terciane -->
+					<Card
+					href="https://www.ucs.br/educs/livro/migracoes-e-historia-da-educacao-saberes-praticas-e-instituicoes-um-olhar-transnacional/"
+					title="Migrações e História da Educação: Saberes, práticas e instituições, um olhar transnacional"
+					body="O livro Migrações e História da Educação: saberes, práticas e instituições, um olhar transnacional contribui para compreender as iniciativas de educação entre imigrantes e filhos de (e/i)migrantes italianos no Brasil, iniciadas por instituições religiosas, público-estatais e da sociedade civil, nos séculos XIX e XX..."
+					/>
+					<Card
+					href="https://www.ucs.br/educs/livro/italianidades-polonidades-e-germanidades/"
+					title="Italianidades, polonidades e germanidades"
+					body="Italianidades, Polonidades e Germanidades lembra aos leitores que os discursos essencialistas, muitas vezes usados para discutir identidades étnicas, não são uniformes nem consistentes..."
+					/>
+					<Card
+					href="https://www.ucs.br/educs/livro/o-processo-escolar-entre-imigrantes-no-rio-grande-do-sul/"
+					title="O Processo Escolar Entre Imigrantes no Rio Grande do Sul"
+					body="O livro O processo escolar entre imigrantes no Rio Grande do Sul narra a história da escola nas antigas colônias Conde D'Eu, Dona Isabel e Caxias. Analisa a constituição e a instituição da escola, sua importância, seu sentido sociopolítico e cultural, bem como os fazeres cotidianos das escolas públicas, olhando a cultura escolar..."
+					/>
+					<Card
+					href="https://www.ucs.br/educs/livro/instituicoes-historias-e-culturas-escolares/"
+					title="Instituições, Histórias e Culturas Escolares"
+					body="A obra Instituições, histórias e culturas escolares é um convite para adentrar nas escolas e conhecer seu pas­sado..."
+					/>
+					<Card
+					href="https://www.ucs.br/educs/livro/escolarizacao-culturas-e-instituicoes-escolas-etnicas-italianas-em-terras-brasileiras/"
+					title="Escolarização, Culturas e Instituições: Escolas Étnicas Italianas em Terras Brasileiras"
+					body="Escolarização, culturas e instituições: escolas étnicas italianas em terras brasileiras resulta de olhares investigativos diversificados para a história das escolas italianas, arcadamente étnicas, existentes em diferentes estados brasileiros..."
+					/>
+					<Card
+					href="https://www.ucs.br/educs/livro/historia-da-escola-dos-imigrantes-italianos-em-terras-brasileiras/"
+					title="História da Escola dos Imigrantes Italianos em Terras Brasileiras"
+					body="Espírito Santo, Minas Gerais, Rio de Janeiro, São Paulo, Paraná, Santa Catarina e Rio Grande do Sul são estados brasileiros que receberam levas consideráveis de imigrantes provenientes da península itálica, com diferentes objetivos e condições, mas que foram marcados pela existência de uma iniciativa singular de escolarização: escolas étnicas..."
+					/>
+					<Card
+					href="https://www.ucs.br/educs/livro/escolas-italianas-no-rio-grande-do-sul-pesquisa-e-documentos/"
+					title="Escolas Italianas no Rio Grande do Sul: Pesquisa e Docu­mentos"
+					body="Escolas italianas no Rio Grande do Sul: pesquisa e docu­mentos reúne três movimentos interligados: narra uma his­tória das escolas italianas no Rio Grande do Sul, apre­sen­ta uma reflexão metodológica e transcreve do­cu­men­tos pri­mários..."
+					/>
+					<Card
+					href="https://editoraunesp.com.br/catalogo/9786557111567,mediacoes-transnacionais-e-imprensa-estrangeira-publicada-no-brasil"
+					title="Mediações transnacionais e imprensa estrangeira publicada no Brasil"
+					body="O leitor encontrará neste livro uma série de análises sobre a imprensa em língua estrangeira no Brasil, bem como sobre as conexões transnacionais proporcionadas por esses periódicos alófonos..."
+					/>
+					<!-- José -->
+					<Card
+					href="https://www.ucs.br/educs/livro/historia-e-historiografia-da-educacao-no-rio-grande-do-sul-4001/"
+					title="História e historiografia da educação no Rio Grande do Sul"
+					body="No final do século passado e início deste século uma série de eventos fez com que historiadores repensassem a conjuntura em que estavam inseridos e os movimentos da História...."
+					/>
+					<Card
+					href="https://www.ucs.br/educs/livro/a-escola-publica-no-brasil-temas-em-debate/"
+					title="A escola pública no Brasil: Temas em debate"
+					body="Os objetivos principais do livro consistem em: (i) reunir textos que articulam experiências práticas de docência com interpretações acadêmicas a respeito da escolarização em instituições públicas da Educação Básica..."
+					/>
+					<Card
+					href="https://www.ucs.br/educs/livro/escola-no-rio-grande-do-sul-1889-1950-ensino-cultura-e-praticas-escolares/"
+					title="Escola no Rio Grande do Sul (1889-1950) : ensino, cultura e práticas escolares"
+					body="Este livro está organizado em quatro partes: as instituições escolares e as escolas de imigrantes, os grupos escolares e o ensino primário, as escolas isoladas e as práticas de ensino, e as Escolas Normais e a formação de professores..."
+					/>
+					<Card
+					href="https://www.ucs.br/educs/livro/o-ensino-em-novo-hamburgors-nas-memorias-de-professores/"
+					title="O Ensino em Novo Hamburgo/RS nas Memórias de Professores"
+					body="E-book na área de Educação..."
+					/>
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title" id="QuemSomos">Quem somos</h2>
+				<div class="content">
+					<p>
+						Líder:
+						<Card
+						href="https://lattes.cnpq.br/7640634913198342"
+						title="Terciane Ângela Luchese"
+						/>
+						Vice-líder:
+						<Card
+						href="http://lattes.cnpq.br/3693254783408309"
+						title="José Edimar de Souza"
+						/>
+						Demais integrantes:
+						<Card
+						href="https://dgp.cnpq.br/dgp/espelhogrupo/6930"
+						title=" Grupo de pesquisa: História da Educação, Imigração e Memória "
+						/>
+					</p>
+				</div>
+			</section>
+		</main>
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	.svg {
+		display: flex;
+  		align-items: center;
+  		justify-content: center;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
