@@ -16,27 +16,22 @@ import AnimatedSVG from '../components/AnimatedSVG.astro';
 		<main class="wrapper about">
 			<section>
 				<h2 class="section-title" id="Sobre">Sobre</h2>
-				<div class="content prog">
+				<div class="content">
 					<section>	
 						<p>O Grupo de Pesquisa História da Educação, Imigração e Memória (GRUPHEIM) foi criado em 2008 na Universidade de Caxias do Sul, como uma iniciativa dos professores Lúcio Kreutz, Terciane Ângela Luchese e Luciane Sgarbi Grazziotin, no âmbito do Programa de Pós-Graduação em Educação.</p>
 					</section>
-					<section>
-						<p>O grupo tem como objetivo principal promover a pesquisa e a divulgação dos estudos relacionados à História da Educação, especialmente na região.</p>
-					</section>
-					<section>
-						<p>Sua formação e objetivos foram discutidos durante o V Congresso Brasileiro de História da Educação, em Aracaju, e desde então, foram realizados os trâmites de registro junto ao CNPq e à instituição de ensino.</p>
-					</section>
-					<section>
-						<p>O GRUPHEIM é composto por pesquisadores, incluindo docentes, estudantes e ex-alunos da UCS e de outras instituições de ensino superior, que colaboram em pesquisas na área da História da Educação.</p>
-					</section>
-					<section>
-						<p>O grupo atua de forma regular e sistemática, buscando contribuir para o avanço da ciência e da pesquisa na área educacional, sempre comprometido com a Educação e com o desenvolvimento da História da Educação.</p>
-					</section>
-					<section>
-						<p>Ao longo de sua trajetória, o GRUPHEIM consolidou uma prática que ampliou as oportunidades de pesquisa no campo da história da educação, tornando-se um referencial nessa área.</p>
-					</section>
-					<section>
-						<p>Inicialmente liderado pelo professor Dr. Lúcio Kreutz, em 2016 a liderança passou para a professora Terciane Ângela Luchese, com o professor José Edimar de Souza atuando como vice-líder do grupo e a colaboração da professora Eliana Rela.</p>
+					<section class="prog">	
+					<p>O grupo tem como objetivo principal promover a pesquisa e a divulgação dos estudos relacionados à História da Educação, especialmente na região.</p>
+					
+					<p>Sua formação e objetivos foram discutidos durante o V Congresso Brasileiro de História da Educação, em Aracaju, e desde então, foram realizados os trâmites de registro junto ao CNPq e à instituição de ensino.</p>
+					
+					<p>O GRUPHEIM é composto por pesquisadores, incluindo docentes, estudantes e ex-alunos da UCS e de outras instituições de ensino superior, que colaboram em pesquisas na área da História da Educação.</p>
+						
+					<p>O grupo atua de forma regular e sistemática, buscando contribuir para o avanço da ciência e da pesquisa na área educacional, sempre comprometido com a Educação e com o desenvolvimento da História da Educação.</p>
+					
+					<p>Ao longo de sua trajetória, o GRUPHEIM consolidou uma prática que ampliou as oportunidades de pesquisa no campo da história da educação, tornando-se um referencial nessa área.</p>
+					
+					<p>Inicialmente liderado pelo professor Dr. Lúcio Kreutz, em 2016 a liderança passou para a professora Terciane Ângela Luchese, com o professor José Edimar de Souza atuando como vice-líder do grupo e a colaboração da professora Eliana Rela.</p>
 					</section>
 				</div>
 			</section>
@@ -151,27 +146,21 @@ import AnimatedSVG from '../components/AnimatedSVG.astro';
 </BaseLayout>
 
 <script>
-const progSections: NodeListOf<HTMLElement> = document.querySelectorAll('.content.prog');
-let currentIndex: number = 0;
+const paragraphs = document.querySelectorAll<HTMLElement>('.prog p');
 
-function loadNextSection() {
-    if (currentIndex < progSections.length) {
-        progSections[currentIndex].style.display = 'block';
-        currentIndex++;
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const paragraph = entry.target as HTMLElement;
+      paragraph.style.opacity = '1';
+      observer.unobserve(paragraph);
     }
-}
+  });
+});
 
-loadNextSection();
-
-window.addEventListener('scroll', () => {
-    const lastSection = progSections[progSections.length - 1];
-    const lastSectionOffset = lastSection.offsetTop;
-    const scrollTop = window.scrollY;
-    const windowHeight = window.innerHeight;
-
-    if (scrollTop + windowHeight >= lastSectionOffset) {
-        loadNextSection();
-    }
+paragraphs.forEach((paragraph) => {
+  paragraph.style.opacity = '0';
+  observer.observe(paragraph);
 });
 </script>
 
