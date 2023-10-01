@@ -16,7 +16,7 @@ import AnimatedSVG from '../components/AnimatedSVG.astro';
 		<main class="wrapper about">
 			<section>
 				<h2 class="section-title" id="Sobre">Sobre</h2>
-				<div class="content">
+				<div class="content prog">
 					<p>O Grupo de Pesquisa História da Educação, Imigração e Memória (GRUPHEIM) foi criado em 2008 na Universidade de Caxias do Sul, como uma iniciativa dos professores Lúcio Kreutz, Terciane Ângela Luchese e Luciane Sgarbi Grazziotin, no âmbito do Programa de Pós-Graduação em Educação.</p>
 
 					<p>O grupo tem como objetivo principal promover a pesquisa e a divulgação dos estudos relacionados à História da Educação, especialmente na região.</p>
@@ -30,7 +30,7 @@ import AnimatedSVG from '../components/AnimatedSVG.astro';
 					<p>Ao longo de sua trajetória, o GRUPHEIM consolidou uma prática que ampliou as oportunidades de pesquisa no campo da história da educação, tornando-se um referencial nessa área.</p>
 					
 					<p>Inicialmente liderado pelo professor Dr. Lúcio Kreutz, em 2016 a liderança passou para a professora Terciane Ângela Luchese, com o professor José Edimar de Souza atuando como vice-líder do grupo e a colaboração da professora Eliana Rela.</p>
-					</div>
+				</div>
 			</section>
 			<section>
 				<h2 class="section-title" id="Publicacoes">Publicações</h2>
@@ -141,6 +141,31 @@ import AnimatedSVG from '../components/AnimatedSVG.astro';
 		</main>
 	</div>
 </BaseLayout>
+
+<script>
+const progSections: NodeListOf<HTMLElement> = document.querySelectorAll('.content.prog');
+let currentIndex: number = 0;
+
+function loadNextSection() {
+    if (currentIndex < progSections.length) {
+        progSections[currentIndex].style.display = 'block';
+        currentIndex++;
+    }
+}
+
+loadNextSection();
+
+window.addEventListener('scroll', () => {
+    const lastSection = progSections[progSections.length - 1];
+    const lastSectionOffset = lastSection.offsetTop;
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    if (scrollTop + windowHeight >= lastSectionOffset) {
+        loadNextSection();
+    }
+});
+</script>
 
 <style>
 	.about {
